@@ -68,7 +68,7 @@ function goPrevPage() {
 
 
 function getPages() {
-    fetch('http://localhost:3000/pages').then(async function(response){
+    fetch('/pages').then(async function(response){
         let txt = await response.text();
         console.log(txt);
         let number_of_pages = parseInt(txt);
@@ -80,12 +80,12 @@ function getPages() {
             <div id="p${page_num}" class="paper">
                 <div class="front">
                     <div id="f${page_num}" class="front-content">
-                        <img class="cover-image" src="http://localhost:3000/page/${page_num * 2 - 1}" alt="cover-image">
+                        <img class="cover-image" src="/page/${page_num * 2 - 1}" alt="cover-image">
                     </div>
                 </div>
                 <div class="back">
                     <div id="b${page_num}" class="back-content">
-                        <img class="cover-image" src="http://localhost:3000/page/${page_num * 2}" atl="1st-page">
+                        <img class="cover-image" src="/page/${page_num * 2}" atl="1st-page">
                     </div>
                 </div>
             </div>
